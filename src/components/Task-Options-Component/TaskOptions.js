@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
 
-export default function taskOptions() {
+export default function taskOptions(props) {
   return (
-    <h1>taskOptions</h1>
-  )
+    <div className="task-options-component">
+      <p>{props.todo_tasks_array}</p>
+      <button onClick={() => props.editListItem(props.taskIndex)}>Edit</button>
+    </div>
+  );
 }

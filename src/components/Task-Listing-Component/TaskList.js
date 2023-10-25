@@ -7,10 +7,14 @@ const TaskList = (props) => {
       <ul className="list-box">
         {props.todo_tasks_array.map((item, index) => (
           <>
-          <li type="1" key={index}>
-            {item}
-          </li>
-          <TaskOptions/>
+            <li type="1" key={index}>
+              {item}
+            </li>
+            <TaskOptions
+              todo_tasks_array={props.todo_tasks_array}
+              editListItem={props.editListItem}
+              taskIndex={index}
+            />
           </>
         ))}
       </ul>
