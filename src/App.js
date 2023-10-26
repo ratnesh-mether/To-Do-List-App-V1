@@ -14,10 +14,25 @@ import React, { useState } from "react";
 export default function App() {
   const [todo_tasks_array, set_todo_tasks] = useState([]);
   const [todo_input, set_todo_input] = useState("");
-  function addListItem(list_item) {
+  function addListItem(list_item, operation, taskIndex = -1) {
     if (list_item !== "") {
-      set_todo_tasks([...todo_tasks_array, list_item]);
-      set_todo_input("");
+      switch (operation) {
+        case "ADD":
+          alert("ADD");
+          set_todo_tasks([...todo_tasks_array, list_item]);
+          set_todo_input("");
+          break;
+        case "EDIT":
+          alert("EDIT");
+          const temp_array = [...todo_tasks_array];
+          temp_array[taskIndex] = todo_input;
+          set_todo_tasks(temp_array);
+          set_todo_input("");
+          break;
+        default:
+          set_todo_tasks([...todo_tasks_array, list_item]);
+          set_todo_input("");
+      }
     } else {
       alert("Empty Input");
     }
@@ -36,13 +51,20 @@ export default function App() {
       <h1>Let's Finish the Dish !!!</h1>
       <TaskList
         todo_tasks_array={todo_tasks_array}
-        editListItem={editListItem}
+        addListItem={addListItem}
+        todo_input={todo_input}
+        handleInputChange={handleInputChange}
       />
       <TaskInput
         todo_input={todo_input}
         handleInputChange={handleInputChange}
       />
-      <AddListButton addListItem={addListItem} todo_input={todo_input} />
+      <AddListButton
+        addListItem={addListItem}
+        todo_input={todo_input}
+        title="Add Task"
+        operation="ADD"
+      />
     </div>
   );
 }

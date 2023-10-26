@@ -12,8 +12,10 @@ const TaskList = (props) => {
             </li>
             <TaskOptions
               todo_tasks_array={props.todo_tasks_array}
-              editListItem={props.editListItem}
+              addListItem={props.addListItem}
+              todo_input={props.todo_input}
               taskIndex={index}
+              handleInputChange={props.handleInputChange}
             />
           </>
         ))}
