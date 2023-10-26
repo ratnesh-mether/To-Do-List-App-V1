@@ -18,12 +18,12 @@ export default function App() {
     if (list_item !== "") {
       switch (operation) {
         case "ADD":
-          alert("ADD");
+          // alert("ADD");
           set_todo_tasks([...todo_tasks_array, list_item]);
           set_todo_input("");
           break;
         case "EDIT":
-          alert("EDIT");
+          // alert("EDIT");- DG-4632[1]:Payment Submit New Copy [ratnesh]
           const temp_array = [...todo_tasks_array];
           temp_array[taskIndex] = todo_input;
           set_todo_tasks(temp_array);
