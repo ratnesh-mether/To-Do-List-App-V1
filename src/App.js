@@ -5,10 +5,11 @@ import "./styles.css";
 import React, { useState } from "react";
 /*
   1. Change prop names. - Done.
-  2. Edit Button. - In Progress.
-  3. Remove Button.
-  4. Delete Task Button.
-  5. Complete Task.
+  2. Edit Button. - Done.
+  3. Introduce Context. - In Progress...
+  4. Remove Button.
+  5. Delete Task Button.
+  6. Complete Task.
 */
 
 export default function App() {

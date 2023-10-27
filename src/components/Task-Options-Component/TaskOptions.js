@@ -4,14 +4,15 @@ import TaskInput from "../Task-Input-Component/TaskInput";
 
 export default function taskOptions(props) {
   const [flag_enableEdit, setEnableEditFlag] = useState(false);
-  function enableEdit(flag) {
-    if (flag) setEnableEditFlag(false);
-    else setEnableEditFlag(true);
-  }
+  const [flag, setFlag] = useState(true);
+
+  const enableEdit = () => {
+    setEnableEditFlag(!flag_enableEdit);
+  };
   return (
     <div className="task-options-component">
       <p>{props.todo_tasks_array}</p>
-      <button onClick={() => enableEdit(true)}>Edit</button>
+      {!flag_enableEdit ? <button onClick={enableEdit}>Edit</button> : ""}
       {flag_enableEdit ? (
         <div className="update-task-section">
           <TaskInput
@@ -25,9 +26,10 @@ export default function taskOptions(props) {
             operation="EDIT"
             taskIndex={props.taskIndex}
           />
+          <button onClick={enableEdit}>Cancel</button>
         </div>
       ) : (
-        <h1>Cool {flag_enableEdit}</h1>
+        ""
       )}
     </div>
   );
