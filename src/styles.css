@@ -2,6 +2,22 @@
   font-family: sans-serif;
   text-align: center;
 }
-.list-box {
+.list{
   background-color: #eee;
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+}
+.input-container{
+  display: flex;
+  justify-content: center;
+  column-gap: 16px;
+}
+.update-task-section{
+  display: flex;
+  column-gap: 16px;
+}
+.CTA-container{
+  display: flex;
+  column-gap: 8px;
 }

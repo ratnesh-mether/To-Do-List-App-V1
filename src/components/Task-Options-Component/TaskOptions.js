@@ -11,7 +11,6 @@ export default function taskOptions(props) {
   };
   return (
     <div className="task-options-component">
-      <p>{props.todo_tasks_array}</p>
       {!flag_enableEdit ? <button onClick={enableEdit}>Edit</button> : ""}
       {flag_enableEdit ? (
         <div className="update-task-section">
@@ -19,14 +18,16 @@ export default function taskOptions(props) {
             todo_input={props.todo_input}
             handleInputChange={props.handleInputChange}
           />
-          <AddListButton
-            addListItem={props.addListItem}
-            todo_input={props.todo_input}
-            title="Update"
-            operation="EDIT"
-            taskIndex={props.taskIndex}
-          />
-          <button onClick={enableEdit}>Cancel</button>
+          <div className="CTA-container">
+            <AddListButton
+              addListItem={props.addListItem}
+              todo_input={props.todo_input}
+              title="Update"
+              operation="EDIT"
+              taskIndex={props.taskIndex}
+            />
+            <button onClick={enableEdit}>Cancel</button>
+          </div>
         </div>
       ) : (
         ""

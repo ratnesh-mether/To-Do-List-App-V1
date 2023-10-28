@@ -6,7 +6,7 @@ const TaskList = (props) => {
     <div className="task-list-component">
       <ul className="list-box">
         {props.todo_tasks_array.map((item, index) => (
-          <>
+          <div className="list">
             <li type="1" key={index}>
               {item}
             </li>
@@ -17,7 +17,7 @@ const TaskList = (props) => {
               taskIndex={index}
               handleInputChange={props.handleInputChange}
             />
-          </>
+          </div>
         ))}
       </ul>
     </div>

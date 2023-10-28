@@ -57,16 +57,18 @@ export default function App() {
         todo_input={todo_input}
         handleInputChange={handleInputChange}
       />
-      <TaskInput
-        todo_input={todo_input}
-        handleInputChange={handleInputChange}
-      />
-      <AddListButton
-        addListItem={addListItem}
-        todo_input={todo_input}
-        title="Add Task"
-        operation="ADD"
-      />
+      <div className="input-container">
+        <TaskInput
+          todo_input={todo_input}
+          handleInputChange={handleInputChange}
+        />
+        <AddListButton
+          addListItem={addListItem}
+          todo_input={todo_input}
+          title="Add Task"
+          operation="ADD"
+        />
+      </div>
     </div>
   );
 }
