@@ -10,7 +10,7 @@ import React, { useState } from "react";
   4. Remove Button.
   5. Delete Task Button.
   6. Complete Task.
-  7. Add CSS.
+  7. Add CSS. - In Progress.
 */
 
 export default function App() {
