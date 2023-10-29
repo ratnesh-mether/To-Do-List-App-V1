@@ -50,7 +50,7 @@ export default function App() {
   };
   return (
     <div className="App-Component">
-      <h1>Let's Finish the Dish !!!</h1>
+      <h1>Advanced TO DO List App</h1>
       <TaskList
         todo_tasks_array={todo_tasks_array}
         addListItem={addListItem}
