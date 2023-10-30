@@ -12,8 +12,10 @@ import React, { useState } from "react";
   6. Complete Task.
   7. Add CSS. - In Progress.
 */
+export const UserContext = React.createContext();
 
 export default function App() {
+  
   const [todo_tasks_array, set_todo_tasks] = useState([]);
   const [todo_input, set_todo_input] = useState("");
   function addListItem(list_item, operation, taskIndex = -1) {
@@ -49,6 +51,7 @@ export default function App() {
     set_todo_input(event.target.value);
   };
   return (
+  <UserContext.Provider value="Reed" >
     <div className="App-Component">
       <h1>Advanced TO DO List App</h1>
       <TaskList
@@ -70,5 +73,6 @@ export default function App() {
         />
       </div>
     </div>
+  </UserContext.Provider>
   );
 }
