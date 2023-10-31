@@ -20,7 +20,7 @@ export default function taskOptions(props) {
             <AddListButton
               title="Update"
               operation="EDIT"
-              taskIndex={taskIndex}
+              taskIndex={props.taskIndex}
             />
             <button onClick={enableEdit}>Cancel</button>
           </div>

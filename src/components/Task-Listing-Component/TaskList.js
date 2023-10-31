@@ -7,12 +7,12 @@ const TaskList = (props) => {
   return (
     <div className="task-list-component">
       <ul className="list-box">
-        {props.todo_tasks_array.map((item, index) => (
+        {todo_tasks_array.map((item, index) => (
           <div className="list">
             <li type="1" key={index}>
               {item}
             </li>
-            <TaskOptions/>
+            <TaskOptions taskIndex={index}/>
           </div>
         ))}
       </ul>

@@ -2,7 +2,7 @@ import AddListButton from "./components/Add-Button-Component/AddListButton";
 import TaskInput from "./components/Task-Input-Component/TaskInput";
 import TaskList from "./components/Task-Listing-Component/TaskList";
 import "./styles.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 /*
   1. Change prop names. - Done.
   2. Edit Button. - Done.
@@ -18,8 +18,11 @@ export default function App() {
   
   const [todo_tasks_array, set_todo_tasks] = useState([]);
   const [todo_input, set_todo_input] = useState("");
-  
+  useEffect(() => {
+    console.log(todo_tasks_array)
+  }, [todo_tasks_array]);
   function addListItem(list_item, operation, taskIndex = -1) {
+    alert(operation)
     if (list_item !== "") {
       switch (operation) {
         case "ADD":
@@ -57,24 +60,15 @@ export default function App() {
     todo_input,
     set_todo_input,
     handleInputChange,
-    addListItem
+    addListItem,
+    editListItem
     }} >
     <div className="App-Component">
       <h1>Advanced TO DO List App</h1>
-      <TaskList
-        todo_tasks_array={todo_tasks_array}
-        addListItem={addListItem}
-        todo_input={todo_input}
-        handleInputChange={handleInputChange}
-      />
+      <TaskList/>
       <div className="input-container">
-        <TaskInput
-          todo_input={todo_input}
-          handleInputChange={handleInputChange}
-        />
+        <TaskInput/>
         <AddListButton
-          addListItem={addListItem}
-          todo_input={todo_input}
           title="Add Task"
           operation="ADD"
         />
