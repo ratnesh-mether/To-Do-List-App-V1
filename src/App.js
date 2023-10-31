@@ -18,6 +18,7 @@ export default function App() {
   
   const [todo_tasks_array, set_todo_tasks] = useState([]);
   const [todo_input, set_todo_input] = useState("");
+  
   function addListItem(list_item, operation, taskIndex = -1) {
     if (list_item !== "") {
       switch (operation) {
@@ -51,7 +52,13 @@ export default function App() {
     set_todo_input(event.target.value);
   };
   return (
-  <UserContext.Provider value="Reed" >
+  <UserContext.Provider value= {{todo_tasks_array,
+    set_todo_tasks,
+    todo_input,
+    set_todo_input,
+    handleInputChange,
+    addListItem
+    }} >
     <div className="App-Component">
       <h1>Advanced TO DO List App</h1>
       <TaskList
