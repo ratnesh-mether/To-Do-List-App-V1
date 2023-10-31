@@ -6,11 +6,12 @@ import React, { useEffect, useState } from "react";
 /*
   1. Change prop names. - Done.
   2. Edit Button. - Done.
-  3. Introduce Context. - In Progress...
+  3. Introduce Context. - Done.
   4. Remove Button.
   5. Delete Task Button.
   6. Complete Task.
   7. Add CSS. - In Progress.
+  8. Optimise Context.
 */
 export const UserContext = React.createContext();
 
