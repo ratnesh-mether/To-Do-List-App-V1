@@ -1,6 +1,11 @@
 .App-Component {
   font-family: sans-serif;
   text-align: center;
+  background-color: #eee;
+  padding: 32px;
+}
+h1{
+  margin: 0;
 }
 .list{
   background-color: #eee;
