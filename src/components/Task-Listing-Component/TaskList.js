@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TaskOptions from "../Task-Options-Component/TaskOptions";
-import { UserContext } from "../../App";
+import DemoContext from "../../contexts/DemoContext/DemoContext";
 
 const TaskList = (props) => {
-  const {todo_tasks_array,addListItem,todo_input,taskIndex,handleInputChange } = React.useContext(UserContext);  
+  const {todo_tasks_array} = useContext(DemoContext);  
   return (
     <div className="task-list-component">
       <ul className="list-box">

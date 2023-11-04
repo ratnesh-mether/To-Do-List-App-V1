@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../../App";
+import DemoContext from "../../contexts/DemoContext/DemoContext";
 
 const TaskInput = (props) => {
-  const {todo_tasks_array,addListItem,todo_input,taskIndex,handleInputChange } = React.useContext(UserContext);  
+  const {todo_input,handleInputChange } = useContext(DemoContext);  
   return (
     <div className="task-input-component">
       <input

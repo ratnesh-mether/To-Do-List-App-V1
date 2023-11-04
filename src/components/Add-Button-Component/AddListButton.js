@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../../App";
+import DemoContext from "../../contexts/DemoContext/DemoContext";
 
 const AddListButton = (props) => {
-  const {todo_tasks_array,addListItem,todo_input,taskIndex,handleInputChange } = React.useContext(UserContext);  
+  const {addListItem,todo_input} = useContext(DemoContext);  
   return (
     <div className="add-button-component">
       <button
