@@ -1,13 +1,12 @@
 import React, { useContext, useState } from "react";
 import AddListButton from "../Add-Button-Component/AddListButton";
 import TaskInput from "../Task-Input-Component/TaskInput";
-import { UserContext } from "../../App";
-import DemoContext from "../../contexts/DemoContext/DemoContext";
+import DataContext from "../../contexts/DataContext/DataContext";
 
 export default function taskOptions(props) {
   const [flag_enableEdit, setEnableEditFlag] = useState(false);
   const [flag, setFlag] = useState(true);
-  const {user} = useContext(DemoContext);
+  const {user} = useContext(DataContext);
   
   const enableEdit = () => {
     setEnableEditFlag(!flag_enableEdit);
@@ -18,7 +17,7 @@ export default function taskOptions(props) {
       {!flag_enableEdit ? <button onClick={enableEdit}>Edit</button> : ""}
       {flag_enableEdit ? (
         <div className="update-task-section">
-          <TaskInput/>
+          <TaskInput operation="EDIT"/>
           <div className="CTA-container">
             <AddListButton
               title="Update"

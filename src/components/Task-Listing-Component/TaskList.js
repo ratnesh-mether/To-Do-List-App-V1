@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import TaskOptions from "../Task-Options-Component/TaskOptions";
-import DemoContext from "../../contexts/DemoContext/DemoContext";
+import DataContext from "../../contexts/DataContext/DataContext";
 
 const TaskList = (props) => {
-  const {todo_tasks_array} = useContext(DemoContext);  
+  const {todo_tasks_array} = useContext(DataContext);  
   return (
     <div className="task-list-component">
       <ul className="list-box">

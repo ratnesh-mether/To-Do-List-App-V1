@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import DemoContext from "./DemoContext";
+import DataContext from "./DataContext";
 
-const DemoContextProvider = ({ children }) => {
-  const [user, setUser] = useState("Hello");
+const DataContextProvider = ({ children }) => {
   const [todo_tasks_array, set_todo_tasks] = useState([]);
   const [todo_input, set_todo_input] = useState("");
+  const [edit_input, set_edit_input] = useState("");
   function addListItem(list_item, operation, taskIndex = -1) {
     if (list_item !== "") {
       switch (operation) {
@@ -16,13 +16,13 @@ const DemoContextProvider = ({ children }) => {
         case "EDIT":
           // alert("EDIT");- DG-4632[1]:Payment Submit New Copy [ratnesh]
           const temp_array = [...todo_tasks_array];
-          temp_array[taskIndex] = todo_input;
+          temp_array[taskIndex] = edit_input;
           set_todo_tasks(temp_array);
-          set_todo_input("");
+          set_edit_input("");
           break;
         default:
           set_todo_tasks([...todo_tasks_array, list_item]);
-          set_todo_input("");
+          set_todo_input(""); 
       }
     } else {
       alert("Empty Input");
@@ -34,15 +34,20 @@ const DemoContextProvider = ({ children }) => {
     set_todo_tasks(temp_array);
     // alert(taskIndex);
   }
-  const handleInputChange = (event) => {
-    set_todo_input(event.target.value);
+  const handleInputChange = (event, operation) => {
+    console.log(operation)
+    if(operation === "EDIT")
+      set_edit_input(event.target.value);
+    else
+      set_todo_input(event.target.value);
   };
   return (
-    <DemoContext.Provider
+    <DataContext.Provider
       value={{
         todo_tasks_array,
         set_todo_tasks,
         todo_input,
+        edit_input,
         set_todo_input,
         handleInputChange,
         addListItem,
@@ -50,8 +55,8 @@ const DemoContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </DemoContext.Provider>
+    </DataContext.Provider>
   );
 };
 
-export default DemoContextProvider;
+export default DataContextProvider;
