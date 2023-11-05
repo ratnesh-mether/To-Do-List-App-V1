@@ -8,12 +8,25 @@ const AddListButton = (props) => {
     <div className="add-button-component">
       <button
         onClick={() =>{
-          if(props.operation === "ADD"){
-            addListItem(todo_input, props.operation, props.taskIndex)
+          switch(props.operation){
+            case "DELETE":
+              addListItem(edit_input, props.operation, props.taskIndex)
+              break;
+            case "EDIT":
+              addListItem(edit_input, props.operation, props.taskIndex)
+              break;
+            case "ADD":
+              addListItem(todo_input, props.operation, props.taskIndex)
+              break;
+            default:
+              break;
           }
-          else{
-            addListItem(edit_input, props.operation, props.taskIndex)
-          }
+          // if(props.operation === "ADD"){
+          //   addListItem(todo_input, props.operation, props.taskIndex)
+          // }
+          // else{
+          //   addListItem(edit_input, props.operation, props.taskIndex)
+          // }
         }
 
         }

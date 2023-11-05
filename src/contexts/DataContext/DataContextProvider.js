@@ -24,7 +24,13 @@ const DataContextProvider = ({ children }) => {
           set_todo_tasks([...todo_tasks_array, list_item]);
           set_todo_input(""); 
       }
-    } else {
+    } 
+    else if(operation === "DELETE") {
+      const temp_array = [...todo_tasks_array];
+      temp_array.splice(taskIndex, 1);
+      set_todo_tasks(temp_array);
+    }
+    else {
       alert("Empty Input");
     }
   }

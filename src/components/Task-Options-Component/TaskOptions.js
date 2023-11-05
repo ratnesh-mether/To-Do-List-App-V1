@@ -6,18 +6,29 @@ import DataContext from "../../contexts/DataContext/DataContext";
 export default function taskOptions(props) {
   const [flag_enableEdit, setEnableEditFlag] = useState(false);
   const [flag, setFlag] = useState(true);
-  const {user} = useContext(DataContext);
-  
+  const { user } = useContext(DataContext);
+
   const enableEdit = () => {
     setEnableEditFlag(!flag_enableEdit);
   };
   return (
     <div className="task-options-component">
       <h1>{user}</h1>
-      {!flag_enableEdit ? <button onClick={enableEdit}>Edit</button> : ""}
+      {!flag_enableEdit ? (
+        <div className="buttons-container">
+          <button onClick={enableEdit}>Edit</button>
+          <AddListButton
+            title="Delete"
+            operation="DELETE"
+            taskIndex={props.taskIndex}
+          />
+        </div>
+      ) : (
+        ""
+      )}
       {flag_enableEdit ? (
         <div className="update-task-section">
-          <TaskInput operation="EDIT"/>
+          <TaskInput operation="EDIT" />
           <div className="CTA-container">
             <AddListButton
               title="Update"

@@ -8,7 +8,7 @@ import "./styles.css";
   2. Edit Button. - Done.
   3. Introduce Context. - Done.
   4. Remove Button.
-  5. Delete Task Button.
+  5. Delete Task Button. - InProgress...
   6. Complete Task.
   7. Add CSS. - In Progress.
   8. Optimise Context - Done
