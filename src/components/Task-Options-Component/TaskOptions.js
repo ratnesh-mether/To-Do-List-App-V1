@@ -16,6 +16,7 @@ export default function taskOptions(props) {
       <h1>{user}</h1>
       {!flag_enableEdit ? (
         <div className="buttons-container">
+          <input type="checkbox"/>
           <button onClick={enableEdit}>Edit</button>
           <AddListButton
             title="Delete"
