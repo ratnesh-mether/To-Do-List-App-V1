@@ -21,7 +21,7 @@ export default function App() {
     <Provider store={store}>
   <DataContextProvider>
     <div className="App-Component">
-      <h1>Advanced TO DO List App</h1>
+      <h1>Magical TO DO List</h1>
       <TaskList/>
       <div className="input-container">
         <TaskInput operation="ADD"/>
