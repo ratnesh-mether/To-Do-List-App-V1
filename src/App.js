@@ -13,7 +13,7 @@ import store from "./Redux-Store/store";
   5. Complete Task. - In Progress...
   6. Add CSS. - In Progress.
   7. Optimise Context - Done.
-  8. Introduce Redux - Done
+  8. Introduce Redux - Done.
 */
 
 export default function App() {
