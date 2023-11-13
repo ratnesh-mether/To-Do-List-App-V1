@@ -1,8 +1,9 @@
 .App-Component {
   font-family: sans-serif;
   text-align: center;
-  background-color: #eee;
+  background-color: #35155D;
   padding: 32px;
+  height: 100vh;
 }
 h1{
   margin: 0;

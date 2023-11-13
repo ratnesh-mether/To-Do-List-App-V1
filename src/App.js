@@ -20,19 +20,16 @@ import store from "./Redux-Store/store";
 export default function App() {
   return (
     <Provider store={store}>
-  <DataContextProvider>
-    <div className="App-Component">
-      <h1>Magical TO DO List</h1>
-      <TaskList/>
-      <div className="input-container">
-        <TaskInput operation="ADD"/>
-        <AddListButton
-          title="Add Task"
-          operation="ADD"
-        />
-      </div>
-    </div>  
-  </DataContextProvider>
-  </Provider>
+      <DataContextProvider>
+        <div className="App-Component">
+          <h1>Magical TO DO List</h1>
+          <TaskList />
+          <div className="input-container">
+            <TaskInput operation="ADD" />
+            <AddListButton title="Add Task" operation="ADD" />
+          </div>
+        </div>
+      </DataContextProvider>
+    </Provider>
   );
 }
