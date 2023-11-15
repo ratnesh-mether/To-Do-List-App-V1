@@ -23,11 +23,11 @@ export default function App() {
       <DataContextProvider>
         <div className="App-Component">
           <h1>Magical TO DO List</h1>
-          <TaskList />
+          <TaskInput operation="ADD" />
           <div className="input-container">
-            <TaskInput operation="ADD" />
             <AddListButton title="Add Task" operation="ADD" />
           </div>
+          <TaskList />
         </div>
       </DataContextProvider>
     </Provider>

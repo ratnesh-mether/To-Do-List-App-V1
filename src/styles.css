@@ -1,36 +1,49 @@
 .App-Component {
   font-family: sans-serif;
   text-align: center;
-  background-color: #35155D;
+  background-color: #f5e8c7;
   padding: 32px;
   height: 100vh;
 }
-h1{
+h1 {
   margin: 0;
 }
-button{
+button {
   border: none;
-  background-color: #eee;
+  background-color: yellow;
   height: 40px;
   border-radius: 4px;
   color: #000;
+  border: 1px solid #aaa;
 }
-.list{
-  background-color: #eee;
+.list-box {
   display: flex;
-  justify-content: center;
+  margin: auto;
+  row-gap: 16px;
+  flex-direction: column;
+  max-width: 300px;
+
+}
+.list {
+  display: flex;
+  justify-content: space-between;
   column-gap: 24px;
+  width: 100%;
 }
-.input-container{
+.input-container {
   display: flex;
   justify-content: center;
   column-gap: 16px;
 }
-.update-task-section{
+.update-task-section {
   display: flex;
   column-gap: 16px;
 }
-.CTA-container{
+.CTA-container {
+  display: flex;
+  column-gap: 8px;
+}
+.buttons-container {
   display: flex;
   column-gap: 8px;
 }
