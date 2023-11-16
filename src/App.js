@@ -1,10 +1,8 @@
-import { Provider } from "react-redux";
 import AddListButton from "./components/Add-Button-Component/AddListButton";
 import TaskInput from "./components/Task-Input-Component/TaskInput";
 import TaskList from "./components/Task-Listing-Component/TaskList";
 import DataContextProvider from "./contexts/DataContext/DataContextProvider";
 import "./styles.css";
-import store from "./Redux-Store/store";
 /*
   1. Change prop names. - Done.
   2. Edit Button. - Done.
@@ -19,17 +17,18 @@ import store from "./Redux-Store/store";
 
 export default function App() {
   return (
-    <Provider store={store}>
       <DataContextProvider>
         <div className="App-Component">
           <h1>Magical TO DO List</h1>
+          <div className="input-container">
           <TaskInput operation="ADD" />
           <div className="input-container">
             <AddListButton title="Add Task" operation="ADD" />
           </div>
+          </div>̦̦̦̦̦
           <TaskList />
         </div>
       </DataContextProvider>
-    </Provider>
   );
 }
+ 

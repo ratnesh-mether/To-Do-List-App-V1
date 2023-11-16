@@ -9,12 +9,8 @@ const TaskList = (props) => {
   const dispatch = useDispatch();
   const list = useSelector((state)=>state.listSlice.counter);  
 
-  const handleCounter = () =>{
-    dispatch(setCounter());
-  }
   return (
     <div className="task-list-component">
-      <button onClick={()=> handleCounter()}>Redux Test</button>
       <ul className="list-box">
         {todo_tasks_array.map((item, index) => (
           <div className="list">

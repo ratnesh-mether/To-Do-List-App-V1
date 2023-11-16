@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    counter : 0
+  todo_list: [],
 }
 export const listSlice = createSlice({
   name: "List",
   initialState,
   reducers: {
-    setCounter:(state) => {
-        state.counter = 1
+    addTodo : (state, action) =>{
+      const todo = {
+        text:action.payload
+      }
+      state.todo_list.push(todo)
     }
   },
 });
 
-export const { setCounter } = listSlice.actions;
+export const { addTodo } = listSlice.actions;
 
 export default listSlice.reducer;
