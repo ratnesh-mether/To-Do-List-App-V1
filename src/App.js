@@ -8,27 +8,27 @@ import "./styles.css";
   2. Edit Button. - Done.
   3. Introduce Context. - Done.
   4. Delete Task Button. - Done
-  5. Complete Task. - In Progress...
-  6. Add CSS. - In Progress.
+  5. Complete Task.
+  6. Add CSS.
   7. Optimise Context - Done.
   8. Introduce Redux - Done.
   9. Add unique keys to the list.
+  10. Move Context Code to the Redux store. - In Progress...
 */
 
 export default function App() {
   return (
-      <DataContextProvider>
-        <div className="App-Component">
-          <h1>Magical TO DO List</h1>
-          <div className="input-container">
+    <DataContextProvider>
+      <div className="App-Component">
+        <h1>Magical TO DO List</h1>
+        <div className="input-container">
           <TaskInput operation="ADD" />
           <div className="input-container">
             <AddListButton title="Add Task" operation="ADD" />
           </div>
-          </div>̦̦̦̦̦
-          <TaskList />
         </div>
-      </DataContextProvider>
+        <TaskList />
+      </div>
+    </DataContextProvider>
   );
 }
- 

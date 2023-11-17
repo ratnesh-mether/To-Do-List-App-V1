@@ -7,7 +7,10 @@ const AddListButton = (props) => {
   const { edit_input, addListItem, todo_input } = useContext(DataContext);
   const dispatch = useDispatch();
   const addListHandler = (item) => {
-    dispatch(addTodo(item))
+    if(item !== "")
+      dispatch(addTodo(item))
+    else 
+      alert("Empty Input Redux");
   }
   const buttonEvent = () => {
     switch (props.operation) {
